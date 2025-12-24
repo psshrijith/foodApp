@@ -1,7 +1,7 @@
 import { useState, useEffect, memo} from 'react'
 import Footer from "./Footer.jsx";
 import RestaurantCard from "./RestaurantCard.jsx";
-import restaurantData from "../utils/restaurantData";
+import useRestaurantData from "../utils/restaurantData";
 import useOnlineStatus from "../utils/useOnlineStatus.jsx";
 import {HOC} from "./HOC";
 import Example from "./Example";
@@ -10,7 +10,7 @@ import ShimmerCard from "./ShimmerCard.jsx";
 import UserClass from "./UserClass";
 
 function HomePage() {
-    const resData = restaurantData();
+    const resData = useRestaurantData();
     const [loading, setLoading] = useState(true);
     const [filteredData, setFilteredData] = useState(resData);
     const isOnline = useOnlineStatus();

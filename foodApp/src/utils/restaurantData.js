@@ -136,7 +136,7 @@ const restaurantList = [
     },
 ];
 
-const restaurantData  = () => {
+const useRestaurantData  = () => {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(()=> {
@@ -146,4 +146,4 @@ const restaurantData  = () => {
     return restaurants;
 }
 
-export default restaurantData;
+export default useRestaurantData;
