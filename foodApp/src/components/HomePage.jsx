@@ -53,7 +53,7 @@ function HomePage() {
     const content = [{id:1, data:"Accordion content 1"}, {id:2, data:"Accordion content 2"}, {id:3, data:"Accordion content 3"}]
     return (
         <div className="">
-            <UserClass/>
+            <UserClass resData={resData} name="Shrijith"/>
             {error && <h1 className="text-red-500">{error}</h1>}
             <div className="flex gap-2">
                 <button
