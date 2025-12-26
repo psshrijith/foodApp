@@ -18,6 +18,7 @@ function NavBar(){
                 <Link to="/cart" className="cursor-pointer">
                     Cart Items ({cartItems.length})
                 </Link>
+                <Link to="/grocery" className="cursor-pointer">Grocery</Link>
 
                 <StatusBar/>
             </ul>

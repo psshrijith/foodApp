@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense  } from 'react';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Layout from './components/Layout';
 import About from './components/About';
@@ -10,9 +10,10 @@ import {UserProvider} from "./utils/example.jsx";
 import {Provider} from "react-redux";
 import appStore from "./utils/appStore";
 import CartPage from "./components/CartPage";
+const GroceryComponent = lazy(() => import('./components/Grocery'));
+
 
 function App() {
-
     const router = createBrowserRouter([
         {
             path: "/",
@@ -24,7 +25,12 @@ function App() {
                 {path: "/restaurant/:id", element : <RestaurantDetails />},
                 {path : "*", element : <Error />},
                 {path: "menu", element: <Menu />},
-                {path: "cart", element : <CartPage />}
+                {path: "cart", element : <CartPage />},
+                {path: "grocery",  element: (
+                        <Suspense fallback={<div>Loading Grocery...</div>}>
+                            <GroceryComponent />
+                        </Suspense>
+                    )}
             ],
         },
     ]);
