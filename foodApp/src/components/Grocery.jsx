@@ -1,6 +1,8 @@
+
 const Grocery = () => {
+
     return (
-        <div>
+        <div className="flex justify-center items-center h-screen">
             <h1>Grocery</h1>
         </div>
     )

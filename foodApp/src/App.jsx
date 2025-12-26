@@ -26,11 +26,11 @@ function App() {
                 {path : "*", element : <Error />},
                 {path: "menu", element: <Menu />},
                 {path: "cart", element : <CartPage />},
-                {path: "grocery",  element: (
-                        <Suspense fallback={<div>Loading Grocery...</div>}>
+                {path: "grocery", element:
+                        ( <Suspense fallback={<div>Suspense loading....</div>}>
                             <GroceryComponent />
-                        </Suspense>
-                    )}
+    </Suspense>)
+                    }
             ],
         },
     ]);
