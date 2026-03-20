@@ -14,7 +14,6 @@ function HomePage() {
     const [loading, setLoading] = useState(true);
     const [filteredData, setFilteredData] = useState(resData);
     const isOnline = useOnlineStatus();
-    const [login, setLogin] = useState("login");
     const [searchResults, setSearchResults] = useState('');
     const [error, setError] = useState(null)
 
@@ -29,7 +28,7 @@ function HomePage() {
         const timer = setTimeout(() => {
             setLoading(false)
             setFilteredData(resData);
-        }, 3000)
+        }, 2000)
         return () => {
             clearTimeout(timer)
         }
@@ -53,15 +52,8 @@ function HomePage() {
     const content = [{id:1, data:"Accordion content 1"}, {id:2, data:"Accordion content 2"}, {id:3, data:"Accordion content 3"}]
     return (
         <div className="">
-            <UserClass resData={resData} name="Shrijith"/>
             {error && <h1 className="text-red-500">{error}</h1>}
             <div className="flex gap-2">
-                <button
-                    className="bg-blue-300 p-1 rounded-lg cursor-pointer"
-                    onClick={() => setLogin(login === "login" ? "logout" : "login")}
-                >
-                    {login}
-                </button>
                 <button className="bg-blue-300 p-2 rounded-md cursor-pointer"
                         onClick={() => handleFilter(resData)}
                 >
